@@ -11,22 +11,7 @@ class Chronometer {
         printTimeCallback();
       }
     }, 1000);
-
-    // this.intervalId = setInterval(() => {
-    //   this.currentTime++;
-    //   if (typeof printTimeCallback === "function") {
-    //     printTimeCallback();
-    //   }
-    // }, 1000);
-    // console.log(this.intervalId);
   }
-
-  // let myInterval = this.intervalId(
-  //   setInterval(() => {
-  //     this.currentTime + 1;
-  //   }, 1000)
-  // );
-  // this.intervalId
 
   getMinutes() {
     return Math.floor(this.currentTime / 60);
@@ -37,12 +22,11 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    if (value.length === 1) {
-      const updateDigits = value.push(0);
-      return JSON.stringify(updateDigits);
+    if (value < 10) {
+      return `0${value}`;
+    } else {
+      return `${value}`;
     }
-    // if (this.getMinutes.length || this.getSeconds.length === 1) {
-    // }
   }
 
   stop() {
